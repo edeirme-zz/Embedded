@@ -25,12 +25,12 @@
   	lw 	$t7, 0($s0)	#load value of A[n] to $t7
 	lw	$t6, 0($s4)	#load value of B[n] to $t6
 	mul	$s5,$t7,$t6	# s5= t7*t6
-	#la   $a0, str1       # load address of spacer for syscall
-      	#li   $v0, 4           # specify Print String service
-      	#syscall  
-	#li	$v0, 1		# Print integer
-	#move 	$a0, $s5	#store contents of register $s5 into a0
-	#syscall
+	la   $a0, str1       # load address of spacer for syscall
+      	li   $v0, 4           # specify Print String service
+      	syscall  
+	li	$v0, 1		# Print integer
+	move 	$a0, $s5	#store contents of register $s5 into a0
+	syscall
 	
 	
 	addi	$t3, $t3, -1	#decrease counter
